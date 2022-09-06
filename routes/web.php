@@ -31,4 +31,4 @@ Route::get('/posts/{id}', function($id){
 
 
 
-});
+})->where('id','[0-9]+');
