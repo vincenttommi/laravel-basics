@@ -25,6 +25,8 @@ Route::get('/hello',function(){
 });
 
 Route::get('/posts/{id}', function($id){
+
+    ddd($id); //die  dumpers helpers help in debugging
    
     
  return response('posts'.$id);   
