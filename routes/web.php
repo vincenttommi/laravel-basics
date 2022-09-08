@@ -18,27 +18,23 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings',[
+
+        'heading'=>'Latest listings',
+         'listings'=> [
+            [
+                'id'=> 1,
+                'title'=> 'Listing one',
+                'description'=>'you can do it vincent come on',
+
+            ],
+
+            [
+                'id' => 2,
+                'title' => 'Listing two',
+                'description' => 'programming is easy to learn',
+            ]
+            ],
+    ]);
 });
 
-Route::get('/hello',function(){
-
-   return  response('<h1>Hello world</h1>',200)
-   ->header('Content-Type','text/plain')
-   ->header('foo','bar');
-
-    
-
-});
-
-Route::get('/posts/{id}', function($id){
-
-//   ddd($id); //die  dumpers helpers help in debugging
- return response('post'.$id); 
-})->where('id','[0-9]+');
-
-Route::get('/search',function(Request $request){
-
-    return $request->name.''.$request->city;
-
-});
