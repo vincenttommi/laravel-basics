@@ -1,6 +1,10 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +23,22 @@ Route::get('/', function () {
 
 Route::get('/hello',function(){
 
-   return  response ('<h1>hello world</h1>', 404);
+   return  response('<h1>Hello world</h1>',200)
+   ->header('Content-Type','text/plain')
+   ->header('foo','bar');
+
     
 
 });
 
 Route::get('/posts/{id}', function($id){
 
-    ddd($id); //die  dumpers helpers help in debugging
-   
-    
- return response('posts'.$id);   
-
-
-
+//   ddd($id); //die  dumpers helpers help in debugging
+ return response('post'.$id); 
 })->where('id','[0-9]+');
+
+Route::get('/search',function(Request $request){
+
+    return $request->name.''.$request->city;
+
+});
