@@ -20,12 +20,12 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('listings',[
 
-        'heading'=>'Latest listings',
-         'listings'=> [
+        'heading' => 'Latest listings',
+         'listings' => [
             [
-                'id'=> 1,
-                'title'=> 'Listing one',
-                'description'=>'you can do it vincent come on',
+                'id' => 1,
+                'title' => 'Listing one',
+                'description' => 'you can do it vincent come on',
 
             ],
 
@@ -33,7 +33,7 @@ Route::get('/', function () {
                 'id' => 2,
                 'title' => 'Listing two',
                 'description' => 'programming is easy to learn',
-            ]
+            ],
             ],
     ]);
 });
