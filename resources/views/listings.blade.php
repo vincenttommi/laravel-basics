@@ -1,11 +1,15 @@
 <h1>{{$heading}}</h1>
+@php
+   $test = 1; 
+@endphp
+{{$test}}
 @foreach($listings as  $listing)
 
 <h2>
-    <?php echo $listing['title'];?>
+    {{$listing['title']}}
 </h2>
 <p>
 
-<?php echo $listing['description'];?>
+ {{$listing['description']}}
 </p>
 @endforeach
