@@ -1,44 +1,11 @@
-<?php 
-namespace App\Models; // exporting class to another location
+<?php
 
-class Listing{
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-public static function all() {
-
-return [
-
-    [
-        'id' => 1,
-        'title' => 'Listing one',
-        'description' => 'you can do it vincent come on',
-
-    ],
-
-    [
-        'id' => 2,
-        'title' => 'Listing two',
-        'description' => 'programming is easy to learn',
-    ],
-];
+class Listing extends Model
+{
+    use HasFactory;
 }
-
-//function that brings in single listing
-
-public  static function find($id){
-
-
-$listings =self::all();
-
-foreach($listings as $listing){
-if($listing['id']== $id){
- return $listing;   
-
-
-
-}
-}
-}
-}
-
-
